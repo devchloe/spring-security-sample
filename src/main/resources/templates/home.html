@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+
+<a href="transfer?accountNo=1234&amount=100">Transfer Money to John</a>
+
+<form action="transfer" method="POST">
+    <label>Account Number</label>
+    <input name="accountNo" type="number" />
+
+    <label>Amount</label>
+    <input name="amount" type="number" />
+
+    <input type="submit">
+</form>
+
+<a href="http://localhost:8080/transfer?accountNo=5678&amount=1000">Show Kittens Pictures</a>
+
+<img src="http://localhost:8080/transfer?accountNo=5678&amount=1000" />
+
+<form action="http://localhost:8000/transfer" method="POST">
+    <input name="accountNo" type="hidden" value="5678" />
+    <input name="amount" type="hidden" value="1000" />
+    <input type="submit" value="Show Kittens Picture">
+</form>
+</body>
+</html>
